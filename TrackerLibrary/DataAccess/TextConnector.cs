@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.DataAccess
 {
-    class TextConnection : IDataConnection
+    class TextConnector : IDataConnection
     {
         // TODO: Wire up the CreatePrize for text files
         public PrizeModel CreatePrize(PrizeModel model)

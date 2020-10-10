@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.DataAccess
 {
     public interface IDataConnection
     {
