@@ -28,15 +28,22 @@ namespace TrackerUI
                     prizeAmountValue.Text,
                     prizePercentageValue.Text
                 );
+                // save to db
+                GlobalConfig.Connection.CreatePrize(model);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                // clear form
+                ClearForm();
             }
-
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
+            }
         }
-
+        /// <summary>
+        /// Very simple form validation.
+        /// TODO: add error messages
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateForm()
         {
             bool output = true;
@@ -79,6 +86,14 @@ namespace TrackerUI
             }
 
             return output;
+        }
+
+        private void ClearForm()
+        {
+            placeNameValue.Text = "";
+            placeNumberValue.Text = "";
+            prizeAmountValue.Text = "0";
+            prizePercentageValue.Text = "0";
         }
     }
 }
