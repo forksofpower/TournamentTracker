@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 using TrackerLibrary.DataAccess;
 
@@ -26,7 +27,7 @@ namespace TrackerLibrary
 
         public static string ConnectionString(string name)
         {
-            ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }
